@@ -1,24 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Motion Activity View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MotionActivityViewController" customModule="CoreMotionDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOw-cU-Asa">
+                                <rect key="frame" x="0.0" y="60" width="414" height="818"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Core Location Data" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGc-1c-diX">
+                                        <rect key="frame" x="20" y="20" width="374" height="51"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51" id="Tec-hu-57f"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyG-8F-p1O">
+                                        <rect key="frame" x="20" y="97" width="374" height="190"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="190" id="55G-kP-1gv"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Core Motion Activity" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSZ-eM-IvM">
+                                        <rect key="frame" x="20" y="307" width="374" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="nQU-jX-ly0"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Bx-E2-XzV">
+                                        <rect key="frame" x="20" y="394" width="374" height="293"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="293" id="gNb-g9-zGY"/>
+                                        </constraints>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hGc-1c-diX" firstAttribute="leading" secondItem="ZyG-8F-p1O" secondAttribute="leading" id="14S-jj-I97"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Bx-E2-XzV" secondAttribute="bottom" constant="115" id="N1E-Cy-Ks7"/>
+                                    <constraint firstItem="eSZ-eM-IvM" firstAttribute="top" secondItem="ZyG-8F-p1O" secondAttribute="bottom" constant="20" id="NYR-nm-zr6"/>
+                                    <constraint firstItem="eSZ-eM-IvM" firstAttribute="trailing" secondItem="4Bx-E2-XzV" secondAttribute="trailing" id="W08-sP-Xxo"/>
+                                    <constraint firstItem="hGc-1c-diX" firstAttribute="centerX" secondItem="XOw-cU-Asa" secondAttribute="centerX" id="Xg8-5t-NSp"/>
+                                    <constraint firstItem="eSZ-eM-IvM" firstAttribute="leading" secondItem="4Bx-E2-XzV" secondAttribute="leading" id="Xq5-RG-VaS"/>
+                                    <constraint firstItem="hGc-1c-diX" firstAttribute="top" secondItem="XOw-cU-Asa" secondAttribute="top" constant="20" id="Ydf-al-AGm"/>
+                                    <constraint firstItem="ZyG-8F-p1O" firstAttribute="trailing" secondItem="eSZ-eM-IvM" secondAttribute="trailing" id="ZnX-sm-NbK"/>
+                                    <constraint firstItem="hGc-1c-diX" firstAttribute="trailing" secondItem="ZyG-8F-p1O" secondAttribute="trailing" id="bKk-oS-Z3N"/>
+                                    <constraint firstItem="ZyG-8F-p1O" firstAttribute="top" secondItem="hGc-1c-diX" secondAttribute="bottom" constant="26" id="bit-gM-xyU"/>
+                                    <constraint firstItem="hGc-1c-diX" firstAttribute="leading" secondItem="XOw-cU-Asa" secondAttribute="leading" constant="20" id="etU-VF-vOd"/>
+                                    <constraint firstAttribute="trailing" secondItem="hGc-1c-diX" secondAttribute="trailing" constant="20" id="ffE-r9-pO6"/>
+                                    <constraint firstItem="4Bx-E2-XzV" firstAttribute="leading" secondItem="ZyG-8F-p1O" secondAttribute="leading" id="iHF-y2-hIM"/>
+                                    <constraint firstItem="4Bx-E2-XzV" firstAttribute="top" secondItem="eSZ-eM-IvM" secondAttribute="bottom" constant="27" id="sNL-qw-Fis"/>
+                                    <constraint firstItem="ZyG-8F-p1O" firstAttribute="leading" secondItem="eSZ-eM-IvM" secondAttribute="leading" id="znl-NC-Iwi"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XOw-cU-Asa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="OLK-f6-r2X"/>
+                            <constraint firstItem="XOw-cU-Asa" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="16" id="WIQ-Zt-ylC"/>
+                            <constraint firstItem="XOw-cU-Asa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eP9-X8-s4I"/>
+                            <constraint firstItem="XOw-cU-Asa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="maF-o8-Rj1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="accelerometerData" destination="hGc-1c-diX" id="OpV-Jv-kr5"/>
+                        <outlet property="deviceMotionData" destination="4Bx-E2-XzV" id="c1Y-0x-GpO"/>
+                        <outlet property="gyroscopeData" destination="ZyG-8F-p1O" id="8Og-Dx-3AB"/>
+                        <outlet property="magnetometerData" destination="eSZ-eM-IvM" id="L7p-1m-11c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

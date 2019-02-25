@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var motionActivityVC: MotionActivityViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        guard let options = launchOptions else { return true }
+        let location: NSNumber? = options[UIApplication.LaunchOptionsKey.location] as? NSNumber
+        
+        if(location?.boolValue ?? false) {
+            motionActivityVC = MotionActivityViewController()
+            motionActivityVC?.setupLocationManager()
+        }
         return true
     }
 
